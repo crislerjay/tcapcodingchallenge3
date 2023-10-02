@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=League+Spartan:wght@500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --text-blue01 : hsl(238, 29%, 16%);
+  --text-blue02 : hsl(237, 12%, 33%);
+  --text-blue03 : hsl(240, 6%, 50%);
+  --text-red : hsl(14, 88%, 65%);
+  --bg-violet : hsl(273, 75%, 66%);
+  --bg-blue : hsl(240, 73%, 65%);
+  --bg-grayish : hsl(240, 5%, 91%);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: 1.2rem;
+}
+
+.spOnly {
+  display: none;
+}
+
+@media screen and (max-width:767px) {
+  .pcOnly {
+    display: none;
+  }
+
+  .spOnly {
+    display: block;
+  }
+}
+
+.wrap {
+  min-height: 100vh;
+  padding-top: 129px;
+  background-image: linear-gradient(to bottom, #af67e9, #9f67e9, #8d66e9, #7a66e8, #6565e7);
+}
+
+.cardWrap {
+  width: 100%;
+  max-width: 962px;
+  margin: 0 auto 30px;
+  padding-left: 42px;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  max-width: 920px;
+  min-height: 509px;
+  margin: auto;
+  padding: 55px 0 82px;
+  background-color: #fff;
+  background-image: url('../images/bg-pattern-desktop.svg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: -530px -265px;
+  border-radius: 23px;
+  box-shadow: 0px 32px 27px -8px rgba(59,59,135,0.81);
+}
+
+.cardImgBlk,
+.accordionWrap {
+  width: 50%;
+}
+
+.cardImgBlk {
+  overflow: hidden;
+  position: relative;
+}
+
+.cardImg01 {
+  position: absolute;
+  top: 58.3%;
+  transform: translateY(-50%);
+  left: -93px;
+  z-index: 999;
+}
+
+.cardImg02 {
+  position: absolute;
+  top: 52.5%;
+  left: -83.5px;
+  transform: translateY(-50%);
+}
+
+.cardImg02 img {
+  width: 100%;
+}
+
+.accordionWrap {
+  padding: 0 96px 0 15px;
+}
+
+.accordionTtl {
+  margin: 12px 0 23px;
+  font-size: 3.3rem;
+  font-weight: 700;
+}
+
+.accordion {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--bg-grayish );
+  font-size: 1.4rem;
+}
+
+.accordionHeader {
+  position: relative;
+  padding-right: 30px;
+  color: var(--text-blue01);
+  letter-spacing: 0.1px;
+  cursor: pointer;
+}
+
+.accordionHeader:hover {
+  color: var(--text-red);
+}
+
+.accordionHeader::after {
+  content: url('../images/icon-arrow-down.svg');
+  position: absolute;
+  top: 0;
+  right: 14px;
+}
+
+.answer {
+  display: none;
+  margin-top: 13px;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: var(--text-blue03);
+}
+
+.accordion.active .accordionHeader {
+  font-weight: 700;
+}
+
+.accordion.active .answer {
+  display: block;
+}
+
+.accordion.active .accordionHeader::after {
+  transform: rotate(180deg);
+}
+
+@media screen and (max-width:900px) {
+  .wrap {
+    padding-top: 150px;
+  }
+  .cardWrap {
+    padding: 0 15px;
+  }
+  .card {
+    display: block;
+    padding: 50px 0;
+    min-height: auto;
+    background-image: url('../images/bg-pattern-mobile.svg');
+    background-size: 270px;
+    background-position: top center;
+    z-index: 999;
+  }
+  .cardImgBlk, .accordionWrap {
+    width: 100%;
+  }
+  .cardImgBlk {
+    overflow: visible;
+  }
+  .cardImg01 {
+    display: none;
+  }
+  .cardImg02 {
+    top: -180px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 275px;
+  }
+  .accordionWrap {
+    padding: 80px 15px 0;
+  }
+  .accordionHeader::after {
+    right: 0;
+  }
+  .accordionTtl {
+    text-align: center;
+    font-size: 2.8rem;
+  }
+  .content {
+    padding-right: 30px;
+  }
+}
