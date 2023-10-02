@@ -9,7 +9,6 @@ function closeAccordion() {
 
 accordionHeader.forEach(btn => {
   btn.addEventListener('click', function() {
-    console.log(this.parentElement);
     if (this.parentElement.classList.contains('active')) {
       this.parentElement.classList.remove('active')
     } else {
